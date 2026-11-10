@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#050611" />
+  <title>Black Hole — 3D Simulator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="space"></canvas>
+  <div class="vignette"></div>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">◉</span><div><b>EVENT HORIZON</b><small>GRAVITY LAB · 01</small></div></div>
+    <div class="live"><i></i> SIMULATION LIVE</div>
+  </header>
+
+  <main class="layout">
+    <section class="intro">
+      <div class="eyebrow">DEEP SPACE RESEARCH / INTERACTIVE MODEL</div>
+      <h1>BLACK<br><em>HOLE</em></h1>
+      <p class="subtitle">A window into the edge of forever.</p>
+      <p class="description">Explore a stylized black hole, watch matter spiral into the event horizon, and experiment with gravity in real time.</p>
+      <div class="stats">
+        <div><small>OBJECT CLASS</small><strong>STELLAR</strong></div>
+        <div><small>DISK TEMP.</small><strong id="temp">6.2M K</strong></div>
+        <div><small>PARTICLES</small><strong id="particleCount">2,400</strong></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head"><div><span class="eyebrow">CONTROL DECK</span><h2>Simulation</h2></div><span class="status">● ACTIVE</span></div>
+      <div class="control">
+        <div class="label-row"><label for="gravity">Gravitational pull</label><output id="gravityValue">1.0×</output></div>
+        <input id="gravity" type="range" min="0.4" max="2.4" step="0.1" value="1" />
+      </div>
+      <div class="control">
+        <div class="label-row"><label for="speed">Disk rotation</label><output id="speedValue">1.0×</output></div>
+        <input id="speed" type="range" min="0" max="3" step="0.1" value="1" />
+      </div>
+      <div class="control">
+        <div class="label-row"><label for="brightness">Disk intensity</label><output id="brightnessValue">75%</output></div>
+        <input id="brightness" type="range" min="20" max="140" step="5" value="75" />
+      </div>
+      <div class="actions">
+        <button id="pauseBtn" class="primary">Ⅱ &nbsp; PAUSE</button>
+        <button id="resetBtn" class="secondary">↺ &nbsp; RESET</button>
+      </div>
+      <div class="hint"><span>✦</span> DRAG TO ORBIT · SCROLL TO ZOOM</div>
+    </section>
+  </main>
+
+  <footer><span>MODEL IS FOR VISUALIZATION ONLY</span><span>THREE.JS / WEBGL</span></footer>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
